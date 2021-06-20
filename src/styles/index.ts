@@ -1,4 +1,6 @@
-import { StyleSheet } from 'react-native'
+import { Dimensions, StyleSheet } from 'react-native'
+
+const deviceWidth = Dimensions.get('window').width
 
 const colors = {
   white: "#FFFFFF",
@@ -47,6 +49,25 @@ const text = StyleSheet.create({
     fontSize: 30,
     color: colors.primary,
     fontWeight: "bold"
+  },
+  goBackText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    color: colors.darkGray,
+    marginLeft: 16
+  },
+  productDetailName: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: colors.darkGray,
+    marginTop: 10
+  },
+
+  productDescription: {
+    fontSize: 16,
+    fontWeight: '400',
+    color: colors.mediumGray,
   }
 })
 
@@ -64,8 +85,8 @@ const theme = StyleSheet.create({
     borderRadius: 20,
     shadowColor: colors.black,
     shadowOffset: {
-      width: 2,
-      height: 0
+      width: 0,
+      height: 2
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
@@ -130,6 +151,11 @@ const theme = StyleSheet.create({
     flexDirection: "row",
     marginTop: 10
   },
+  productImg: {
+    width: 140,
+    height: 140,
+    margin: 16,
+  },
 
   //Search Innput
   inputContainer: {
@@ -153,7 +179,89 @@ const theme = StyleSheet.create({
     height: 40,
     borderBottomWidth: 0.5,
     borderBottomColor: colors.borderGray
+  },
+
+  //Product Details
+  detailContainer: {
+    backgroundColor: colors.white,
+    padding: 5,
+  },
+
+  detailCard: {
+    width: '100%',
+    height: '100%',
+    backgroundColor: colors.white,
+    borderRadius: 20,
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    justifyContent: 'space-around',
+    padding: 20
+  },
+
+  goBackContainer: {
+    width: 290,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    marginVertical: 10
+  },
+
+  productImageContainer: {
+    width: "100%",
+    borderWidth: 1,
+    borderColor: colors.lightGray,
+    alignItems: "center",
+    borderRadius: 20
+  },
+
+  productImage: {
+    width: 220,
+    height: 220
+  },
+
+  scrollTextContainer: {
+    marginVertical: 20,
+    padding: 10,
+    borderWidth: 0.5,
+    borderRadius: 10,
+    borderColor: colors.lightGray
   }
 })
 
-export { colors, theme, text }
+const nav = StyleSheet.create({
+  lefText: {
+    color: colors.white,
+    fontWeight: 'bold',
+    marginLeft: 20
+  },
+  drawer: {
+    marginRight: 20
+  },
+  options: {
+    width: deviceWidth,
+    height: 120,
+    backgroundColor: colors.primary,
+    marginTop: 125,
+    marginRight: -20,
+    padding: 20,
+    justifyContent: 'space-between'
+  },
+  option: {
+    paddingVertical: 5
+  },
+  textOption: {
+    color: colors.white,
+    textTransform: 'uppercase'
+  },
+  textActive: {
+    fontWeight: 'bold'
+  }
+})
+
+export { colors, theme, text, nav }
